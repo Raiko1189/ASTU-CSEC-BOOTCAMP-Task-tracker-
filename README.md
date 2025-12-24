@@ -1,16 +1,171 @@
-# React + Vite
+Perfect 👍
+Here is a **clean, modern, professional `README.md`** tailored **exactly** to your project, **including your deployment URL**.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+You can **copy–paste this directly** into your `README.md`.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+````md
+# 📝 Task Tracker – Modern React Frontend
 
-## React Compiler
+A **modern, responsive Task Tracker web application** built with **React + Vite** and **Tailwind CSS v4**, featuring **dark/light mode**, smooth animations, and a clean professional UI.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project was developed as part of the **ASTU CSEC Bootcamp**, focusing on real-world frontend practices and UI quality.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🌐 Live Demo
+
+👉 **Deployment URL:**  
+https://astu-csec-bootcamp-task-tracker.vercel.app
+
+---
+
+## ✨ Features
+
+- ✅ Add, complete, and delete tasks
+- 🌗 Dark / Light mode with persistent theme
+- 💾 Tasks stored in LocalStorage
+- 📊 Statistics page (total, completed, remaining)
+- 🎨 Modern UI with animations
+- 📱 Fully responsive design
+- ⚡ Fast development using Vite
+
+---
+
+## 🛠️ Tech Stack
+
+- **React 18**
+- **Vite**
+- **Tailwind CSS v4**
+- **React Router DOM**
+- **Context API**
+- **LocalStorage**
+
+---
+
+## 📂 Project Structure
+
+```txt
+src/
+│── components/
+│   ├── Header.jsx
+│   ├── TaskInput.jsx
+│   ├── TaskItem.jsx
+│   └── TaskList.jsx
+│
+│── pages/
+│   ├── Home.jsx
+│   └── Stats.jsx
+│
+│── store/
+│   └── taskContext.jsx
+│
+│── App.jsx
+│── main.jsx
+│── index.css
+````
+
+---
+
+## 🚀 Getting Started (Local Setup)
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/task-tracker-frontend.git
+cd task-tracker-frontend
+```
+
+### 2️⃣ Install dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Run the development server
+
+```bash
+npm run dev
+```
+
+---
+
+## 🌙 Dark Mode Implementation
+
+Dark mode is implemented using **React Context + Tailwind’s `dark` class**.
+
+* Theme preference is saved in **LocalStorage**
+* The `dark` class is toggled on `<html>`
+
+```js
+document.documentElement.classList.toggle("dark", darkMode);
+```
+
+---
+
+## 📊 Stats Page
+
+The Stats page dynamically shows:
+
+* Total number of tasks
+* Completed tasks
+* Remaining tasks
+
+All values update instantly based on task state.
+
+---
+
+## 🎯 Learning Outcomes
+
+* React Context API for global state
+* Persistent data using LocalStorage
+* Tailwind CSS v4 utility-first styling
+* Clean component architecture
+* Professional UI/UX patterns
+* Routing with React Router
+
+---
+
+## 📄 License
+
+This project is open-source and available under the **MIT License**.
+
+---
+
+## 🙌 Author
+
+**Reiko Wakbeka**
+Frontend Developer
+ASTU CSEC Bootcamp
+
+````
+
+---
+
+## ✅ Final Step: Push README
+
+```bash
+git add README.md
+git commit -m "Add project README with deployment link"
+git push
+````
+
+---
+
+### 🔥 This README is:
+
+* Recruiter-friendly
+* Bootcamp-appropriate
+* Professional
+* Clean
+* Modern
+
+If you want next:
+
+* 📸 Add screenshots section
+* 🌍 Improve Vercel SEO
+* 🧪 Add ESLint
+* 🎨 UI micro-interactions
+
+Just say it — we upgrade it 😎
