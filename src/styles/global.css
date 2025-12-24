@@ -1,0 +1,274 @@
+/* =========================
+   RESET
+========================= */
+@import "tailwindcss";
+/* smoother feel */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* nicer scrollbar (optional but pro) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #a1a1aa;
+  border-radius: 10px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #52525b;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   THEME VARIABLES
+========================= */
+.light {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --danger: #dc2626;
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+.dark {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #38bdf8;
+  --danger: #ef4444;
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+}
+
+.light,
+.dark {
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--bg), rgba(0, 0, 0, 0.03));
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 1rem;   /* ⬅ reduced height */
+  background: var(--card);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 0 0 14px 14px;
+  box-shadow: 0 6px 16px var(--shadow); /* lighter shadow */
+}
+
+.header h1 {
+  font-size: 1.3rem;      /* ⬅ smaller title */
+  letter-spacing: 0.3px;
+}
+
+/* Quote styling */
+.quote {
+  font-size: 0.75rem;     /* ⬅ compact quote */
+  margin-top: 0.15rem;
+  padding-left: 0.6rem;
+  border-left: 2px solid var(--accent);
+}
+
+/* Navigation */
+.header nav {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.header a {
+  font-size: 0.9rem;      /* ⬅ smaller links */
+}
+
+
+.header a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.2s ease;
+}
+
+.header a:hover::after {
+  width: 100%;
+}
+
+/* Header button */
+.header button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.header button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px var(--shadow);
+}
+
+/* =========================
+   PAGE CONTAINER
+========================= */
+.page {
+  max-width: 720px;
+  margin: auto;
+  padding: 1.5rem 1rem;
+}
+
+/* spacing between sections */
+.page > * + * {
+  margin-top: 1.4rem;
+}
+
+/* =========================
+   TASK INPUT
+========================= */
+.task-input {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5f5;
+  background: transparent;
+  color: var(--text);
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-input input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+
+.task-input button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.65rem 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.task-input button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px var(--shadow);
+}
+
+/* =========================
+   TASK LIST
+========================= */
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+/* =========================
+   TASK ITEM
+========================= */
+.task {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: var(--card);
+  padding: 0.75rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px var(--shadow);
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.task:hover {
+  transform: scale(1.01);
+}
+
+.task span {
+  flex: 1;
+}
+
+/* Completed task */
+.task.completed span {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.task.completed {
+  opacity: 0.7;
+}
+
+/* Delete button */
+.task button {
+  background: var(--danger);
+  color: #fff;
+  border: none;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.task button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px var(--shadow);
+}
+
+/* =========================
+   STATS
+========================= */
+.stats {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 14px;
+  display: grid;
+  gap: 0.6rem;
+  box-shadow: 0 12px 30px var(--shadow);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+  .task-input {
+    flex-direction: column;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
