@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Stats from "./pages/Stats";
+import Stats from "./pages/stats";
 import Header from "./components/Header";
 
 export default function App() {
